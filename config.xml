@@ -2,7 +2,7 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.phonegap.helloworld"
         version   = "1.0.0">
-    <name>Mujaffar s</name>
+    <name>Wiki</name>
     
     <description>desc</description>
     <content src="index.html" />
