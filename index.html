@@ -1,107 +1,185 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
 
-<head>
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    http://www.apache.org/licenses/LICENSE-2.0
 
-    <title>Simple Sidebar - Start Bootstrap Template</title>
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <!-- Bootstrap theme CSS -->
+        <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+        <link href="css/index.css" rel="stylesheet">
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="js/datepicker/css/redmond/jquery-ui-1.10.1.custom.min.css" />
 
-    <!-- Custom CSS -->
-    <link href="css/simple-sidebar.css" rel="stylesheet">
+        <title>Hello World</title>
+    </head>
+    <body role="document" onload="onDeviceReady()" onresize="onResize()">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
-</head>
-
-<body>
-
-    <div id="wrapper">
-
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="#">
-                        Start Bootstrap
-                    </a>
-                </li>
-                <li>
-                    <a href="#">Dashboard</a>
-                </li>
-                <li>
-                    <a href="#">Shortcuts</a>
-                </li>
-                <li>
-                    <a href="#">Overview</a>
-                </li>
-                <li>
-                    <a href="#">Events</a>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Services</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
-            </ul>
-        </div>
-        <!-- /#sidebar-wrapper -->
-
-        <!-- Page Content -->
-        <div id="page-content-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1>Simple Sidebar</h1>
-                        <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
-                        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
-                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
-						
-						<i class="fa fa-cloud" style="font-size:24px;"></i>
-                            <i class="fa fa-cloud" style="font-size:36px;"></i>
-                            <i class="fa fa-cloud" style="font-size:48px;color:red;"></i>
-                            <i class="fa fa-cloud-upload" style="font-size:60px;color:lightblue;text-shadow:2px 2px 4px #000000;"></i>
-                            <i class="fa fa-home" style="font-size:60px;color:lightblue;text-shadow:2px 2px 4px #000000;"></i>
-                    </div>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Call log</a>
                 </div>
             </div>
-        </div>
-        <!-- /#page-content-wrapper -->
+        </nav>
 
-    </div>
-    <!-- /#wrapper -->
+        <div class="container theme-showcase" role="main">
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+            <h1>My first App</h1>
+            <p>Open Database</p>
+            <div id="qrpopup" > //The hidden div tag for implementing the popup
+                <hr/>
+                <input type="text" id="editNameBox"><br>
+                <input type="text" id="editNumberBox"><br>
+                <button onclick="goDelete()">Delete</button>
+                <button onclick="goEdit()">Edit</button>
+                <button onclick="document.getElementById('qrpopup').style.display = 'none';">Discard</button>
+            </div>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+            <div>
+                Name<input type="text" value="Name" id="txtName">
+                Number<input type="text" value="123" id="txtNumber"><hr/>
+            </div>
+            <div id="tblDiv"></div>
+            <div style="text-align: center">
+                <button onclick="goInsert()">Insert</button>
+                <button onclick="goSearch()">Search</button>
+                <button onclick="successCB()">Show All</button>
+            </div>            
 
-    <!-- Menu Toggle Script -->
-    <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-    </script>
+        </div> <!-- /container -->
 
-</body>
 
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="js/jquery.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        
+        <script type="text/javascript" charset="utf-8">
+
+            // Wait for Cordova to load
+           // document.addEventListener("deviceready", onDeviceReady, false);
+
+            var currentRow;
+            // Populate the database
+            function populateDB(tx) {
+                tx.executeSql('CREATE TABLE IF NOT EXISTS DEMO (id INTEGER PRIMARY KEY AUTOINCREMENT, name,number)');
+            }
+
+            // Query the database
+            function queryDB(tx) {
+                tx.executeSql('SELECT * FROM DEMO', [], querySuccess, errorCB);
+            }
+
+            function searchQueryDB(tx) {
+                tx.executeSql("SELECT * FROM DEMO where name like ('%" + document.getElementById("txtName").value + "%')",
+                        [], querySuccess, errorCB);
+            }
+            // Query the success callback
+            //
+            function querySuccess(tx, results) {
+                var tblText = '<table id="t01"><tr><th>ID</th> <th>Name</th> <th>Number</th></tr>';
+                var len = results.rows.length;
+                for (var i = 0; i < len; i++) {
+                    var tmpArgs = results.rows.item(i).id + ",'" + results.rows.item(i).name
+                            + "','" + results.rows.item(i).number + "'";
+                    tblText += '<tr onclick="goPopup(' + tmpArgs + ');"><td>' + results.rows.item(i).id + '</td><td>'
+                            + results.rows.item(i).name + '</td><td>' + results.rows.item(i).number + '</td></tr>';
+                }
+                tblText += "</table>";
+                document.getElementById("tblDiv").innerHTML = tblText;
+            }
+
+            //Delete query
+            function deleteRow(tx) {
+                tx.executeSql('DELETE FROM DEMO WHERE id = ' + currentRow, [], queryDB, errorCB);
+            }
+
+            // Transaction error callback
+            function errorCB(err) {
+                alert("Error processing SQL: " + err.code);
+            }
+
+            // Transaction success callback
+            function successCB() {
+                var db = window.openDatabase("Database", "1.0", "Cordova Demo", 200000);
+                db.transaction(queryDB, errorCB);
+            }
+
+            // Cordova is ready            
+            function onDeviceReady() { 
+                alert('here');
+                var db = window.openDatabase("Database", "1.0", "Cordova Demo", 200000);
+                db.transaction(populateDB, errorCB, successCB);
+            }
+
+            //Insert query
+            function insertDB(tx) {
+                tx.executeSql('INSERT INTO DEMO (name,number) VALUES ("' + document.getElementById("txtName").value
+                        + '","' + document.getElementById("txtNumber").value + '")');
+            }
+
+            function goInsert() {
+                var db = window.openDatabase("Database", "1.0", "Cordova Demo", 200000);
+                db.transaction(insertDB, errorCB, successCB);
+            }
+
+            function goSearch() {
+                var db = window.openDatabase("Database", "1.0", "Cordova Demo", 200000);
+                db.transaction(searchQueryDB, errorCB);
+            }
+
+            function goDelete() {
+                var db = window.openDatabase("Database", "1.0", "Cordova Demo", 200000);
+                db.transaction(deleteRow, errorCB);
+                document.getElementById('qrpopup').style.display = 'none';
+            }
+
+            //Show the popup after tapping a row in table
+            //
+            function goPopup(row, rowname, rownum) {
+                currentRow = row;
+                document.getElementById("qrpopup").style.display = "block";
+                document.getElementById("editNameBox").value = rowname;
+                document.getElementById("editNumberBox").value = rownum;
+            }
+
+            function editRow(tx) {
+                tx.executeSql('UPDATE DEMO SET name ="' + document.getElementById("editNameBox").value +
+                        '", number= "' + document.getElementById("editNumberBox").value + '" WHERE id = '
+                        + currentRow, [], queryDB, errorCB);
+            }
+            function goEdit() {
+                var db = window.openDatabase("Database", "1.0", "Cordova Demo", 200000);
+                db.transaction(editRow, errorCB);
+                document.getElementById('qrpopup').style.display = 'none';
+            }
+
+            </script>
+    </body>
 </html>
