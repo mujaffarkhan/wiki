@@ -27,7 +27,7 @@
         <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 
-<body>
+<body role="document" onload="onDeviceReady()">
 
     <div id="wrapper">
 
@@ -83,6 +83,30 @@
                 </div>
             </div>
         </div>
+        
+        <div class="container theme-showcase" role="main">
+            <h1>My first App</h1>
+            <p>Open Database</p>
+            <div id="qrpopup" > //The hidden div tag for implementing the popup
+                <hr/>
+                <input type="text" id="editNameBox"><br>
+                <input type="text" id="editNumberBox"><br>
+                <button onclick="goDelete()">Delete</button>
+                <button onclick="goEdit()">Edit</button>
+                <button onclick="document.getElementById('qrpopup').style.display = 'none';">Discard</button>
+            </div>
+            <div>
+                Name<input type="text" value="Name" id="txtName">
+                Number<input type="text" value="123" id="txtNumber"><hr/>
+            </div>
+            <div id="tblDiv"></div>
+            <div style="text-align: center">
+                <button onclick="goInsert()">Insert</button>
+                <button onclick="goSearch()">Search</button>
+                <button onclick="successCB()">Show All</button>
+            </div>
+        </div>
+        
         <!-- /#page-content-wrapper -->
 
     </div>
@@ -93,6 +117,9 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/db.js"></script>
 
     <!-- Menu Toggle Script -->
     <script>
