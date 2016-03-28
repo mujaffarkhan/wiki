@@ -1,0 +1,3 @@
+var insertQueries = "INSERT INTO `wk_inventions` (`id`, `name`, `eraId`, `year`, `inventorId`, `imageName`, `imageOffline`, `imageLink`) VALUES"+
+	"(1, ' <a  >Stone tools</a> (Oldowan)', 0, '<a >Ethiopia</a>', 0, 'https://en.wikipedia.org/wiki/File:National_park_stone_tools.jpg', '', 'https://en.wikipedia.org/wiki/File:National_park_stone_tools.jpg'),"+
+	"(2, ' <a >Stone tools</a> (Oldowan)', 0, '<a >Ethiopia</a>', 0, 'https://en.wikipedia.org/wiki/File:National_park_stone_tools.jpg', '', 'https://en.wikipedia.org/wiki/File:National_park_stone_tools.jpg')";

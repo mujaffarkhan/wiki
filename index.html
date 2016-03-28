@@ -17,13 +17,6 @@
     <!-- Custom CSS -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
         <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 
@@ -69,22 +62,23 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1>Simple Sidebar</h1>
-                        <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
-                        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
+                        <h1 class="invName">Simple Sidebar</h1>
+                        <p class="invImage"></p>
+                        <p class="invFacts">Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
                         <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
 						
 						<i class="fa fa-cloud" style="font-size:24px;"></i>
                             <i class="fa fa-cloud" style="font-size:36px;"></i>
                             <i class="fa fa-cloud" style="font-size:48px;color:red;"></i>
-                            <i class="fa fa-cloud-upload" style="font-size:60px;color:lightblue;text-shadow:2px 2px 4px #000000;"></i>
-                            <i class="fa fa-home" style="font-size:60px;color:lightblue;text-shadow:2px 2px 4px #000000;"></i>
+                            <!--<i class="fa fa-cloud-upload" style="font-size:60px;color:lightblue;text-shadow:2px 2px 4px #000000;"></i>-->
+                            <!--<i class="fa fa-home" style="font-size:60px;color:lightblue;text-shadow:2px 2px 4px #000000;"></i>-->
                     </div>
                 </div>
+                <button onclick="goInsert()">Insert</button>
             </div>
         </div>
         
-        <div class="container theme-showcase" role="main">
+<!--        <div class="container theme-showcase" role="main">
             <h1>My first App</h1>
             <p>Open Database</p>
             <div id="qrpopup" > //The hidden div tag for implementing the popup
@@ -101,11 +95,10 @@
             </div>
             <div id="tblDiv"></div>
             <div style="text-align: center">
-                <button onclick="goInsert()">Insert</button>
                 <button onclick="goSearch()">Search</button>
                 <button onclick="successCB()">Show All</button>
             </div>
-        </div>
+        </div>-->
         
         <!-- /#page-content-wrapper -->
 
@@ -119,6 +112,7 @@
     <script src="js/bootstrap.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
+    <script src="js/db_src.js"></script>
     <script src="js/db.js"></script>
 
     <!-- Menu Toggle Script -->
